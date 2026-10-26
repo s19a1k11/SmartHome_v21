@@ -1,0 +1,47 @@
+# ===== 私有凭据（绝不入库）=====
+# 真实 WiFi 密码 / MQTT 设备凭据放在这里，模板是 cloud_credentials.example.h
+cloud_credentials.h
+**/cloud_credentials.h
+
+# ===== Keil MDK build output =====
+Objects/
+Listings/
+DebugConfig/*.dbgconf
+
+# Build intermediates
+*.o
+*.d
+*.crf
+*.dep
+*.lnp
+*.axf
+*.map
+*.lst
+*.iex
+*.htm
+
+# ===== 编译产物固件（不入库）=====
+# HEX 是把源码 + 当时的 cloud_credentials.h 一起编译出来的，
+# 里面以明文存放 WiFi 密码与 MQTT 凭据。入库等于把密码公开。
+# 需要固件请自行用 Keil 编译，或私下传输。
+HEX/
+*.hex
+
+# Keil per-user files (one per machine, do not share)
+# 这些文件带本机用户名（如 .uvguix.27505），公开会泄露主机名
+*.uvguix
+*.uvguix.*
+*.uvoptx
+
+# Logs / temp
+*.log
+*.bak
+*.tmp
+*~
+JLinkLog.txt
+JLinkSettings.ini
+
+# System files
+Thumbs.db
+desktop.ini
+.DS_Store
